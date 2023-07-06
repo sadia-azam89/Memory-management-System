@@ -1,0 +1,55 @@
+C++ CODE FOR THE IMPLEMENTATION OF PAGING TECHNIQUE: 
+ 
+// paging.cpp : This file contains the 'main' function. Program execution begins and ends there. 
+// 
+ 
+#include <iostream> using namespace std; 
+int main() { 
+ 	int ms, ps, nop, np, rempages, i, j, x, y, pa, offset; 
+ 	int s[10], fno[10][20]; 
+        cout<<"Enter the memory size -- ";
+  	cin>>ms; 
+ 	cout << endl; 
+ 	cout<<"Enter the page size -- "; 
+ 	cin>>ps;  	cout << endl;  	nop = ms / ps; 
+ 	cout<<"\nThe no. of pages available in memory are -- "<<nop;  	
+        cout<<"\nEnter number of processes -- "; 
+ 	cin>>np; 
+ 	cout << endl; 
+ 	rempages = nop; 
+ 	for (i = 1; i <= np; i++) 
+ 	{ 
+ 	 	cout<<"\nEnter no. of pages required for "<<i<<"-- ";
+  	 	cin>>s[i]; 
+ 	 	cout << endl;  	 	
+                if (s[i] > rempages) 
+ 	 	{ 
+ 
+ 	 	 	cout<<"\nMemory is Full"<<endl; 
+ 	 	 	break; 
+ 	 	} 
+ 	 	rempages = rempages - s[i];
+  	 	cout << endl; 
+ 	 	for (j = 0; j < s[i]; j++)
+  	 	cin>>fno[i][j]; 
+ 	} 
+ 	cout<<"\nEnter Logical Address to find Physical Address "<<endl;  	
+        cout << "\nEnter process no. and pagenumber and offset -- " << endl; 
+ 	cin >> x;
+  	cout << endl; 
+ 	cin >> y;  	
+        cout << endl;  	
+        cin >> offset; 
+ 	cout << endl; 
+ 	if (x > np || y >= s[i] || offset >= ps) 
+ 	 	cout << "\nInvalid Process or Page Number or offset" << endl; 
+ 	else 
+ 	{ 
+ 	 	pa = fno[x][y] * ps + offset;
+  	 	cout<<"\nThe Physical Address is -- ";
+  	 	cout << pa << endl; 
+ 	} 
+ 	system("pause"); 
+ 	return 0; 
+} 
+ 
