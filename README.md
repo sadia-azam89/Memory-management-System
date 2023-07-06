@@ -1,1 +1,5 @@
-# Memory-management-System
+**# Memory-management-System
+code**
+This code is an implementation of a basic paging technique in C++. Operating systems use paging as a memory management strategy to effectively manage memory allocation and address translation. The code takes input from the user regarding memory size, page size, number of processes, and the number of pages required for each process. It then calculates the number of pages available in memory and checks if the requested number of pages for each process can be accommodated.
+The code initializes a 2D array to store the page numbers for each process. It then prompts the user to enter the page numbers for each process. Afterward, the code asks for a logical address to find the corresponding physical address. The logical address consists of the process number, page number, and offset.
+The code checks if the entered process number, page number, and offset are valid. If they are valid, it calculates the physical address by multiplying the page number by the page size and adding the offset. Finally, the physical address is printed on the console.
